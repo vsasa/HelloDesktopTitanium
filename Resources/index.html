@@ -1,50 +1,11 @@
 <html>
+
 <head>
-<style>
-html,body {margin:0;padding:0;}
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-#app { 
-	height:100%;
-	display: -webkit-box;
-        -webkit-box-orient: vertical;
-	-webkit-box-align:stretch;
-}
+	<title>Desktop test application</title>
 
-#header { 
-	height:50px; 
-	background-color:#cdcdcd;
-}
-
-#footer { 
-	height:30px; 
-	background-color:#cdcdcd;
-}
-
-#content {
-	-webkit-box-flex:1;
-	display: -webkit-box;
-        -webkit-box-orient: horizontal;
-	-webkit-box-align:stretch;
-}
-
-#sidebar { width:120px; background-color:#676767;}
-
-#main {
-	-webkit-box-flex:1;
-	background-color:green;
-}
-
-.input {
-    border: 1px solid #006;
-    background: #ffc;
-}
-.button {
-    border: 1px solid #006;
-    background: #9cf;
-}
-
-
-</style>
+	<link type="text/css" rel="stylesheet" href="css/style.css"/>
 </head>
 
 <body>
@@ -53,11 +14,16 @@ html,body {margin:0;padding:0;}
 		<div id="content">
 			<div id="sidebar">Ovo je side bar</div>
 			<div id="main">Glavni sadržaj<br>
-				<form action="">
-    				Name: <input type="text" class="input" />
-    				Password: <input type="password" class="input" />
-    				<input type="submit" onclick="btn_click()" value="Submit" class="button" />
-				</form> 
+				<p>
+					<input type"text" class="val1" id="val1" value="30" />
+					<input type"text" class="val2" id="val2" value="40" />
+				</p>
+				<p><input type="button" class="btn1" onclick="saberi()" id="btn1" value="saberi" /></p> 
+				
+				<textarea id="result" rows="1" cols="20">
+					Rezultat:
+				</textarea>
+
 			</div>
 		</div>
 		<div id="footer">
@@ -65,4 +31,14 @@ html,body {margin:0;padding:0;}
 		</div>
 	</div>
 </body>
+
+<script>
+	function saberi(){
+		var x = parseFloat( document.getElementById("val1").value );
+		var y = parseFloat( document.getElementById("val2").value );
+		document.getElementById("result").value = "Rezultat: " + (x + y).toString();
+	}
+	
+</script>
+
 </html>
