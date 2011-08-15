@@ -6,6 +6,9 @@
 	<title>Desktop test application</title>
 
 	<link type="text/css" rel="stylesheet" href="css/style.css"/>
+	<script type="text/javascript" src="js/jquery-1.6.min.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.1.8.10.min.js"></script>
+
 </head>
 
 <body>
@@ -18,7 +21,7 @@
 					<input type"text" class="val1" id="val1" value="30" />
 					<input type"text" class="val2" id="val2" value="40" />
 				</p>
-				<p><input type="button" class="btn1" onclick="saberi()" id="btn1" value="saberi" /></p> 
+				<p><input type="button" class="btn1" id="btn1" value="saberi" /></p> 
 				
 				<textarea id="result" rows="1" cols="20">
 					Rezultat:
@@ -33,11 +36,19 @@
 </body>
 
 <script>
+	
 	function saberi(){
 		var x = parseFloat( document.getElementById("val1").value );
 		var y = parseFloat( document.getElementById("val2").value );
 		document.getElementById("result").value = "Rezultat: " + (x + y).toString();
-	}
+	};
+	
+	$(document).ready(function(){
+   		$("#btn1").click(function(event){
+     		
+     		$("#result").val( parseFloat( $("#val1").val()) + parseFloat($("#val2").val()) );
+   		});
+	 });	
 	
 </script>
 
